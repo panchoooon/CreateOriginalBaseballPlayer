@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: white;
+            text-align: center;
+        }
+        table, th, td {
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        line-height: 1.5;
+        }
+        table{
+            width: 300px;
+        }
+
+        table.type06 th {
+        width: 350px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        background: #0055ff;
+        color: #ffffff;
+        }
+        table.type06 td {
+        width: 550px;
+        padding: 10px;
+        vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>選手名鑑</h1>
+    <table border="1" class="type06">
+        <tr>
+            <th>チーム名</th>
+            <th>氏名</th>
+            <th>年齢</th>
+            <th>守備位置</th>
+            <th>弾道</th>
+            <th>ミート</th>
+            <th>パワー</th>
+            <th>走力</th>
+            <th>肩力</th>
+            <th>送球</th>
+            <th>捕球</th>
+            <th>球速(km/h)</th>
+            <th>スタミナ</th>
+            <th>コントロール</th>
+        </tr>
+        {% for player in players %}
+            <tr>
+                <td>{{ player.team }}</td>
+                <td>{{ player.full_name }}</td>
+                <td>{{ player.age }}</td>
+                <td>{{ player.position }}</td>
+
+                <td>{{ player.trajectory }}</td>
+                <td>{{ player.meat}}</td>
+                <td>{{ player.power}}</td>
+                <td>{{ player.speed }}</td>
+                <td>{{ player.shoulder }}</td>
+                <td>{{ player.throw }}</td>
+                <td>{{ player.catch }}</td>
+
+                <td>{{ player.ballSpeed}}</td>
+                <td>{{ player.stamina}}</td>
+                <td>{{ player.control}}</td>
+
+            </tr>
+        {% endfor %}
+        </table>
+    </table>
+    
+</body>
+</html>

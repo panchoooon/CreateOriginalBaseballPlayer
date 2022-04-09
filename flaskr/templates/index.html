@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: white;
+            text-align: center;
+        }
+        h1{
+            color:blue;
+        }
+        a{
+            color: blue;
+        }
+    </style>
+</head>
+    <body>
+        <h1>オリジナル選手作成⚾</h1>
+            <a href = "{{url_for('form') }}">選手作成</a>
+            <br>
+            <a href = "{{url_for('library')}}">選手名鑑</a>
+            <br>
+            <a href = "{{url_for('ranking')}}">ランキング</a>
+            <br>
+            <img src="./image/sports_baseball_man_asia.png" alt="野球選手">
+    </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: white;
+            text-align: center;
+        }
+        table{
+            align-items: center;
+        }
+        th{
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    
+
+</head>
+    <body>
+        <h1>選手作成画面</h1>
+        <form method="post" action="{{ url_for('register') }}">
+            <h2>【一般】</h2>
+            <table border="=1">
+                <tr>
+                    <th>項目</th>
+                    <th>入力フォーム</th>
+                </tr>
+                <tr>
+                    <td>苗字</td>
+                    <td><input type="text" name = "family_name"></td>
+                </tr>
+                <tr>
+                    <td>名前</td>
+                    <td><input type="text" name = "first_name"></td>
+                </tr>
+                <tr>
+                    <td>年齢</td>
+                    <td><input type="text" name = "age"></td>
+                </tr>
+                <tr>
+                    <td>経歴</td>
+                    <td>
+                        <select name="career">
+                            <option value="highschool">高卒</option>
+                            <option value="university">大卒</option>
+                            <option value="society">社会人</option>
+                            <option value="foreigner">助っ人外国人</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>出身地</td>
+                    <td>
+                        <select name="hometown">
+                            <option value="hokkaido">北海道</option>
+                            <option value="tokyo">東京都</option>
+                            <option value="aichi">愛知県</option>
+                            <option value="osaka">大阪府</option>
+                            <option value="hiroshima">広島県</option>
+                            <option value="fukuoka">福岡県</option>
+                            <option value="oita">大分県</option>
+                            <option value="okinawa">沖縄県</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>利き腕</td>
+                    <td>
+                        <select name="hand">
+                            <option value="right">右</option>
+                            <option value="left">左</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>打席</td>
+                    <td>
+                        <select name="bbox">
+                            <option value="right">右</option>
+                            <option value="left">左</option>
+                            <option value="both">両</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ポジション</td>
+                    <td>
+                        <select name="position" >
+                            <option value="pitcher">投</option>
+                            <option value="catcher">捕</option>
+                            <option value="first">一</option>
+                            <option value="second">二</option>
+                            <option value="third">三</option>
+                            <option value="short">遊</option>
+                            <option value="left">左</option>
+                            <option value="center">中</option>
+                            <option value="right">右</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>背番号</td>
+                    <td><input type="text" name = "uniform_number"></td>
+                </tr>
+                <tr>
+                    <td>チーム</td>
+                    <td>
+                        <select name="team" >
+                            
+                            <option value="Buffaloes">バファローズ</option>
+                            <option value="marines">マリーンズ</option>
+                            <option value="eagles">イーグルス</option>
+                            <option value="hawks">ホークス</option>
+                            <option value="fighters">ファイターズ</option>
+                            <option value="lions">ライオンズ</option>
+                            <option value="swallows">スワローズ</option>
+                            <option value="tigers">タイガース</option>
+                            <option value="giants">ジャイアンツ</option>
+                            <option value="carp">カープ</option>
+                            <option value="dragons">ドラゴンズ</option>
+                            <option value="baystars">ベイスターズ</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <h2>【投手能力】</h2>
+            <table border="=1">
+                <tr>
+                    <th>項目</th>
+                    <th>入力フォーム</th>
+                </tr>
+                <tr>
+                    <td>球速_(100-175km/h)</td>
+                    <td><input type="text" name = "ballSpeed"></td>
+                </tr>
+                <tr>
+                    <td>スタミナ(0-100)</td>
+                    <td><input type="text" name = "stamina"></td>
+                </tr>
+                <tr>
+                    <td>コントロール(0-100)</td>
+                    <td><input type="text" name = "control"></td>
+                </tr>
+                <tr>
+                    <td>スライダー変化量(0-7)</td>
+                    <td><input type="text" name = "slider"></td>
+                </tr>
+                <tr>
+                    <td>カットボール変化量(0-7)</td>
+                    <td><input type="text" name = "cut"></td>
+                </tr>
+                <tr>
+                    <td>カーブ変化量(0-7)</td>
+                    <td><input type="text" name = "curve"></td>
+                </tr>
+                <tr>
+                    <td>フォーク変化量(0-7)</td>
+                    <td><input type="text" name = "fork"></td>
+                </tr>
+                <tr>
+                    <td>チェンジアップ変化量(0-7)</td>
+                    <td><input type="text" name = "changeUp"></td>
+                </tr>
+                <tr>
+                    <td>防御率(0.00-99.99)</td>
+                    <td><input type="text" name = "era"></td>
+                </tr>
+            </table>
+
+            <h2>【野手能力】</h2>
+            <table border="=1">
+                <tr>
+                    <th>項目</th>
+                    <th>入力フォーム</th>
+                </tr>
+                <tr>
+                    <td>ミート(1-100)</td>
+                    <td><input type="text" name = "meatAbility"></td>
+                </tr>
+                <tr>
+                    <td>パワー(1-100)</td>
+                    <td><input type="text" name = "powerAbility"></td>
+                </tr>
+                <tr>
+                    <td>弾道(1-7)</td>
+                    <td><input type="text" name = "trajectory"></td>
+                </tr>
+                <tr>
+                    <td>走力(1-100)</td>
+                    <td><input type="text" name = "speedAbility"></td>
+                </tr>
+                <tr>
+                    <td>肩力(1-100)</td>
+                    <td><input type="text" name = "shoulderAbility"></td>
+                </tr>
+                <tr>
+                    <td>送球(1-100)</td>
+                    <td><input type="text" name = "throwAbility"></td>
+                </tr>
+                <tr>
+                    <td>捕球(1-100)</td>
+                    <td><input type="text" name = "catchAbility"></td>
+                </tr>
+                <tr>
+                    <td>打率(0.000-1.000)</td>
+                    <td><input type="text" name = "butting_average"></td>
+                </tr>
+                <tr>
+                    <td>本塁打(0-100)</td>
+                    <td><input type="text" name = "hr"></td>
+                </tr>
+                <tr>
+                    <td>打点(0-200)</td>
+                    <td><input type="text" name = "rbi"></td>
+                </tr>
+                <tr>
+                    <td>盗塁(0-100)</td>
+                    <td><input type="text" name = "sb"></td>
+                </tr>
+
+            </table>
+
+            <br>
+            <input type="submit" value = "選手登録">
+        </form>
+    </body>
+</html>
